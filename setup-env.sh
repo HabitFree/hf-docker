@@ -43,6 +43,7 @@ docker exec wordpress-instance /bin/bash -c 'wp theme activate wp-hf-theme --all
 
 echo 'Update Options'
 docker exec wordpress-instance /bin/bash -c 'wp option update default_comment_status close --allow-root'
+docker exec wordpress-instance /bin/bash -c 'wp option update sidebars_widgets --format=json --allow-root < option-sidebar_widgets.txt'
 
 echo 'Create Content'
 docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Settings' --post_content='[hfSettings]'"

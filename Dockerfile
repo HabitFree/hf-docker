@@ -11,6 +11,8 @@ COPY wp-cli.phar .
 COPY wp-config.php .
 COPY wp-config.php /usr/src/wordpress
 
+COPY option-sidebar_widgets.txt .
+
 RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 
 RUN apt-get update
