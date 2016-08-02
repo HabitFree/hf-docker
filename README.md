@@ -28,6 +28,10 @@ Stop env:
 
     ./teardown-env.sh
 
+Connect to test db from host:
+
+    mysql -h127.0.0.1 -P3306 -pqwerqwer -uroot
+
 Running a command in container from host proof of concept:
 
     docker exec hf-wordpress /bin/bash -c 'cd /usr/src/wordpress && ls'

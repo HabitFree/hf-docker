@@ -16,6 +16,13 @@ docker run --name hf-mysql -v `pwd`/data:/var/lib/mysql \
   -e MYSQL_DATABASE=habitfree \
   -e MYSQL_USER=habitfree \
   -e MYSQL_PASSWORD=hfpass \
+  -d mysql
+
+docker run --name hf-test-mysql -v `pwd`/test-data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=qwerqwer \
+  -e MYSQL_DATABASE=wp_test \
+  -e MYSQL_USER=wp_test \
+  -e MYSQL_PASSWORD=hftest \
   -p 3306:3306 -d mysql
 
 docker run --name hf-wordpress --link hf-mysql:mysql \
