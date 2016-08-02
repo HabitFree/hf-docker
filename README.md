@@ -7,7 +7,7 @@
 3. `cd` into your local copy.
 4. Make shell files executable: `chmod +x *.sh`
 5. Start the environment: `./restart-env.sh`
-6. Load the site in a browser: http://localhost:8080/
+6. Load the site in a browser: [http://localhost:8080/](http://localhost:8080/)
 
 ## More Info
 
