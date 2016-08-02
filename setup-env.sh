@@ -48,3 +48,5 @@ docker exec wordpress-instance /bin/bash -c 'wp option update sidebars_widgets -
 echo 'Create Content'
 docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Settings' --post_content='[hfSettings]'"
 docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Authenticate' --post_content='[hfAuthenticate]'"
+docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Goals' --post_content='[hfGoals]'"
+docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Partners' --post_content='[hfManagePartners]'"
