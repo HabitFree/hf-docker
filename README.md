@@ -2,7 +2,7 @@
 
 ## Basic Usage Instructions
 
-1. Install Docker.
+1. Install [Docker](http://www.docker.com/).
 2. Clone this repository to your local machine: `git clone https://github.com/HabitFree/hf-docker.git`
 3. `cd` into your local copy.
 4. Make shell files executable: `chmod +x *.sh`
