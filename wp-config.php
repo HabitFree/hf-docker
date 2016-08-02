@@ -92,6 +92,10 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 	$_SERVER['HTTPS'] = 'on';
 }
 
+// Manual init of $_SERVER variables for Docker environment
+$_SERVER['SERVER_NAME'] = 'localhost';
+$_SERVER["SERVER_PORT"] = 8080;
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */

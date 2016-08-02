@@ -37,5 +37,13 @@ done
 echo 'Activate Plugins'
 docker exec wordpress-instance /bin/bash -c 'chown www-data /var/www/html/wp-content/plugins/disable-canonical-redirects.php'
 docker exec wordpress-instance /bin/bash -c 'wp plugin activate disable-canonical-redirects wp-accountability --allow-root --path=/usr/src/wordpress'
+
 echo 'Activate Theme'
 docker exec wordpress-instance /bin/bash -c 'wp theme activate wp-hf-theme --allow-root'
+
+echo 'Update Options'
+docker exec wordpress-instance /bin/bash -c 'wp option update default_comment_status close --allow-root'
+
+echo 'Create Content'
+docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Settings' --post_content='[hfSettings]'"
+docker exec wordpress-instance /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Authenticate' --post_content='[hfAuthenticate]'"

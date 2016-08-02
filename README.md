@@ -51,7 +51,3 @@ Inside machine, see all environment variables, including ones created by Docker:
 Jump out of a machine:
 
     ctrl+p+q
-
-# Random Notes
-
-sed -i -e "s/define('WP_DEBUG', false);/define('WP_DEBUG', true);/g" wp-config.php  
