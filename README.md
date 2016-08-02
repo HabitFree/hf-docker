@@ -30,11 +30,11 @@ Stop env:
 
 Running a command in container from host proof of concept:
 
-    docker exec wordpress-instance /bin/bash -c 'cd /usr/src/wordpress && ls'
+    docker exec hf-wordpress /bin/bash -c 'cd /usr/src/wordpress && ls'
 
 Jump into a machine:
 
-    docker exec -it wordpress-instance bash
+    docker exec -it hf-wordpress bash
 
 Inside WordPress machine, list plugins:
 
