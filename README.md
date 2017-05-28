@@ -9,49 +9,37 @@
 5. Start the environment: `./restart-env.sh`
 6. Load the site in a browser: [http://localhost:8080/](http://localhost:8080/)
 
-## More Info
+## Logins
 
-Prepare to start env:
+Account         | Username | Password
+----------------|----------|---------
+WordPress admin | admin    | hfpass
 
-    chmod +x setup-env.sh
-    chmod +x teardown-env.sh
-    chmod +x restart-env.sh
+## Commands
 
-Start env:
+### Host Commands
 
-    ./setup-env.sh
+Command                                                               | Description
+----------------------------------------------------------------------|-------------------------
+`chmod +x *.sh`                                                       | Prepare to start env
+`./setup-env.sh`                                                      | Start env
+`./teardown-env.sh`                                                   | Stop env
+`mysql -h127.0.0.1 -P3306 -pqwerqwer -uroot`                          | Connect to test db
+`docker exec hf-wordpress /bin/bash -c 'cd /usr/src/wordpress && ls'` | Run command in container
+`docker exec -it hf-wordpress bash`                                   | Jump into machine
 
-To access WordPress after starting the env, browse to http://localhost:8080/ in
-a browser.
+### Any Docker Machine Commands
 
-Stop env:
+Command             | Description
+--------------------|-------------------------------------
+`prentenv`          | See all env vars, including Docker's
+`ctrl+p+q`          | Jump out of machine
 
-    ./teardown-env.sh
+### WordPress Docker Machine Commands
 
-Connect to test db from host:
+Command                                                 | Description
+--------------------------------------------------------|----------------
+`wp plugin list --allow-root --path=/usr/src/wordpress` | List plugins
+`mysql --host=mysql -pqwerqwer`                         | Access MySQL db
 
-    mysql -h127.0.0.1 -P3306 -pqwerqwer -uroot
-
-Running a command in container from host proof of concept:
-
-    docker exec hf-wordpress /bin/bash -c 'cd /usr/src/wordpress && ls'
-
-Jump into a machine:
-
-    docker exec -it hf-wordpress bash
-
-Inside WordPress machine, list plugins:
-
-    wp plugin list --allow-root --path=/usr/src/wordpress
-
-Inside WordPress machine, access MySQL database:
-
-    mysql --host=mysql -pqwerqwer
-
-Inside machine, see all environment variables, including ones created by Docker:
-
-    printenv
-
-Jump out of a machine:
-
-    ctrl+p+q
+    
