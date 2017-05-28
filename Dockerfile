@@ -4,6 +4,8 @@ VOLUME [ "/usr/src/wordpress/wp-content/plugins/wp-accountability", "/usr/src/wo
 
 COPY disable-canonical-redirects.php /usr/src/wordpress/wp-content/plugins/
 
+COPY php.ini /usr/local/etc/php
+
 COPY wp-cli.yml .
 
 COPY wp-cli.phar .
