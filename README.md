@@ -30,10 +30,10 @@ Command                                                               | Descript
 
 ### Any Docker Machine Commands
 
-Command             | Description
---------------------|-------------------------------------
-`prentenv`          | See all env vars, including Docker's
-`ctrl+p+q`          | Jump out of machine
+Command              | Description
+---------------------|-------------------------------------
+`prentenv`           | See all env vars, including Docker's
+`ctrl+p+q` or `exit` | Jump out of machine
 
 ### WordPress Docker Machine Commands
 

@@ -1,0 +1,4 @@
+# Global parameter defaults
+path: /var/www/html
+extra-php: |
+  define( 'WP_DEBUG', true );

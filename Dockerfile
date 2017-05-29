@@ -1,24 +1,27 @@
-FROM wordpress
+FROM php:7.1
 
-VOLUME [ "/usr/src/wordpress/wp-content/plugins/wp-accountability", "/usr/src/wordpress/wp-content/themes/wp-hf-theme" ]
+WORKDIR /var/www/html
 
-COPY disable-canonical-redirects.php /usr/src/wordpress/wp-content/plugins/
+VOLUME [ "/var/www/html/wp-content/plugins/wp-accountability", "/var/www/html/wp-content/themes/wp-hf-theme" ]
 
-COPY php.ini /usr/local/etc/php
+RUN apt-get update; \
+    apt-get install -y mysql-client nano
 
-COPY wp-cli.yml .
+RUN docker-php-ext-install \
+    mysqli \
+    pdo \
+    pdo_mysql
 
-COPY wp-cli.phar .
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; \
+    chmod +x wp-cli.phar; \
+    mv wp-cli.phar /usr/local/bin/wp; \
+    wp core download --path=/var/www/html --allow-root
 
-COPY wp-config.php .
-COPY wp-config.php /usr/src/wordpress
-
-COPY option-sidebar_widgets.txt .
-
-RUN chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-
-RUN apt-get update
-
-RUN apt-get install -y mysql-client nano
+COPY transfer/php.ini /usr/local/etc/php
+COPY transfer/disable-canonical-redirects.php ./wp-content/plugins/
+COPY transfer/wp-cli.yml .
+COPY transfer/wp-config.php .
+COPY transfer/option-sidebar_widgets.txt .
 
 ENV TERM xterm
+EXPOSE 80
