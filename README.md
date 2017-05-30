@@ -1,6 +1,6 @@
 # hf-docker
 
-## Basic Usage Instructions
+## Installation & Usage
 
 1. Install [Docker](http://www.docker.com/)
 2. `git clone https://github.com/HabitFree/hf-docker.git`
