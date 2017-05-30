@@ -61,6 +61,7 @@ docker exec hf-wordpress /bin/bash -c "wp post create --allow-root --post_type=p
 docker exec hf-wordpress /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Authenticate' --post_content='[hfAuthenticate]'"
 docker exec hf-wordpress /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Goals' --post_content='[hfGoals]'"
 docker exec hf-wordpress /bin/bash -c "wp post create --allow-root --post_type=page --post_status=publish --post_title='Partners' --post_content='[hfManagePartners]'"
+docker exec hf-wordpress /bin/bash -c "wp post create --allow-root --post_type=hf_quotation --post_status=publish --post_title='John 3:16' --post_content='For God so loved...'"
 
 echo 'Serve'
 docker exec --detach hf-wordpress /bin/bash -c "wp server --host=0.0.0.0 --port=80 --allow-root"
