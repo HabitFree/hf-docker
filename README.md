@@ -11,9 +11,11 @@
 
 ## Logins
 
-Account         | Username | Password
-----------------|----------|---------
-WordPress admin | admin    | hfpass
+Account         | Username  | Password | Port
+----------------|-----------|----------|-----
+WordPress admin | admin     | hfpass   | 8080
+DB: habitfree   | habitfree | hfpass   | 3305
+DB: wp_test     | wp_test   | hftest   | 3306
 
 ## Commands
 

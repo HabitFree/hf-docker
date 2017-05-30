@@ -15,7 +15,7 @@ docker run --name hf-mysql \
   -e MYSQL_DATABASE=habitfree \
   -e MYSQL_USER=habitfree \
   -e MYSQL_PASSWORD=hfpass \
-  -d mysql
+  -p 3305:3306 -d mysql
 
 docker run --name hf-test-mysql \
   -e MYSQL_ROOT_PASSWORD=qwerqwer \
